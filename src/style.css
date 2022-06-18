@@ -6,10 +6,10 @@ html{
     font-family: 'Montserrat', 'sans-serif';
 
     
-    --color-gray-400:  rgb(216, 249, 220);
+    --color-green-400:  rgb(216, 249, 220);
     
-    --color-gray-100: rgb(3, 164, 164);
-    --color-gray-500: rgb(232, 249, 243);
+    --color-green-100: rgb(3, 164, 164);
+    --color-green-500: rgb(232, 249, 243);
     
   
     --color-primary-500-contrast: white;
@@ -33,9 +33,10 @@ html{
 
 
 body {
-    background-color: var(--color-gray-500);
+    background-color: var(--color-green-500);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    
 }
 
 
@@ -43,7 +44,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    color:rgb(3, 164, 164);
+    color: var(--color-green-100);
     
     /* flex-direction: row; */
 }
@@ -78,6 +79,7 @@ body {
 .main{
     display: flex;
     justify-content: center;
+    margin-bottom: 100px;
 }
 
 .blog-items{
@@ -113,6 +115,20 @@ body {
 
 .btn:hover,
 .btn:active{
-    background-color: var(--color-gray-100);
+    background-color: var(--color-green-100);
     border-color: var(--color-primary-700);
 }
+
+footer {
+    position:fixed;
+    left: 15%;
+    bottom: 0;
+    width: 70%;
+    min-height: 6%;
+    background-color: var(--color-green-500);
+    color: #485458;
+    text-align: center;
+    padding-top: 20px;
+    width:70%;
+    border-top: solid 1px;
+  }
