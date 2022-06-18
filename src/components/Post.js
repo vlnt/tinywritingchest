@@ -1,7 +1,6 @@
 import React from 'react'
-import Post from './post'
 
-export default function PostRef(props){
+export default function Post(props){
     const [isShown, setIsShown] = React.useState(false)
 
     const formattedDate = new Date(props.post.date).toLocaleDateString('en-US', {
