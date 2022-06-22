@@ -17,7 +17,7 @@ html{
     --color-error-100: rgb(255, 192, 180);
     --color-error-500: rgb(199, 51, 15);
   
-    --color-blue-100: rgb(13, 127, 137);
+    --color-blue-100: hsl(185, 83%, 29%);
   
     --space-1: 0.25rem;
     --space-2: 0.5rem;
@@ -59,8 +59,8 @@ body {
     width: 80px;
     height: 100px;
     margin: 50px;
-    border-radius: 50%;
-    border: double 2px;
+    /* border-radius: 50%;
+    border: double 2px; */
 }
 
 .header--title{
@@ -131,4 +131,10 @@ footer {
     padding-top: 20px;
     width:70%;
     border-top: solid 1px;
+  }
+
+  @media (max-width: 48rem){
+    .container{
+        display:block;
+    }
   }
