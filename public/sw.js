@@ -6,17 +6,17 @@ const addResourcesToCache = async (resources) => {
   self.addEventListener("install", (event) => {
 
     console.log('[Service Worker] Installing service worker...', event)
-    // event.waitUntil(
-    //   addResourcesToCache([
-    //     "/",
-    //     "/index.html",
-    //     "/style.css",
-    //     "/js/app.js",
-    //     "/images/favicon.ico",
-    //     "/images/inkpot.png",
-    //     "/static/js/bundle.js"//
-    //   ])
-    // );
+    event.waitUntil(
+      addResourcesToCache([
+        "/",
+        //"/index.html",
+        //"/style.css",
+        "/js/app.js",
+        "/images/favicon.ico",
+        "/images/inkpot.png",
+        "/static/js/bundle.js"//
+      ])
+    );
   });
 
   self.addEventListener("activate", (event) => {
@@ -25,6 +25,13 @@ const addResourcesToCache = async (resources) => {
   });
 
   self.addEventListener("fetch", (event) => {
-    console.log('[Service Worker] Fetch event triggered in service worker...', event)
-    event.respondWith(fetch(event.request))
+    //console.log('[Service Worker] Fetch event triggered in service worker...', event)
+    event.respondWith(caches.match(event.request)
+                       .then(function(response){
+                        if(response){
+                          return response
+                        } else{
+                          return fetch(event.request)
+                        }
+                       }))
    });
