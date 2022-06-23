@@ -11,6 +11,7 @@ export default function Post(props){
       })
 
     function showPost(e){
+        //console.log(e)
         const postContent = document.getElementById(`${props.post.id}`)
         if(!isShown){
             setIsShown(true)

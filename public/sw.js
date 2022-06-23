@@ -32,6 +32,13 @@ const addResourcesToCache = async (resources) => {
                           return response
                         } else{
                           return fetch(event.request)
+                          .then(function(res){
+                            return caches.open('dynamic')
+                            .then(function(cache){
+                              cache.put(event.request.url, res.clone())
+                              return res
+                            })
+                          })
                         }
                        }))
    });
