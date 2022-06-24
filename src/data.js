@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         title: 'Traveling',
-        text: ` Although tourism  became widely affordable only in second half of last  century,it is now very popular throughout 
+        text: ` Although, tourism  became widely affordable only in second half of last  century,it is now very popular throughout 
         the world. For about the last 60-70 years many people made use the openness of the countries , which was hard to get into 
         before.For the last years curiosity led people to places where before was only room for interests of scholars and diplomats.
         Many of us considers boring spending vacation at the local  resort areas.And so do I and prefere to spend my vacation 

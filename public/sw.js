@@ -1,5 +1,8 @@
+STATIC_CACHE = 'v4'
+DYNAMIC_CACHE = 'd1'
+
 const addResourcesToCache = async (resources) => {
-    const cache = await caches.open("v1");
+    const cache = await caches.open(STATIC_CACHE);
     await cache.addAll(resources);
   };
   
@@ -14,13 +17,22 @@ const addResourcesToCache = async (resources) => {
         "/js/app.js",
         "/images/favicon.ico",
         "/images/inkpot.png",
-        "/static/js/bundle.js"//
+        //"/static/js/bundle.js"//
       ])
     );
   });
 
   self.addEventListener("activate", (event) => {
    console.log('[Service Worker] Activating service worker...', event)
+   event.waitUntil(caches.keys()
+                   .then(function(keyList){
+                    return Promise.all(keyList.map(function(key){
+                      if(key !== STATIC_CACHE && key !== DYNAMIC_CACHE){
+                        console.log('[Service Worker] Removing old cache...', key)
+                        caches.delete(key)
+                      }
+                    }))
+                   }))
    return self.clients.claim()
   });
 
@@ -33,11 +45,13 @@ const addResourcesToCache = async (resources) => {
                         } else{
                           return fetch(event.request)
                           .then(function(res){
-                            return caches.open('dynamic')
+                            return caches.open(DYNAMIC_CACHE)
                             .then(function(cache){
                               cache.put(event.request.url, res.clone())
                               return res
                             })
+                          }).catch(function(e){
+                            return
                           })
                         }
                        }))
