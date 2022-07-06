@@ -1,25 +1,26 @@
 import React, {useState} from 'react'
-import data from '../data'
+//import data from '../data'
 import Post from './Post' 
 
 const URL_FIREBASE_REALTIME_DATABASE = 'https://tinywritingchest-default-rtdb.europe-west1.firebasedatabase.app/data.json'
 
 export default function Content(props){
     let dataReceived = false
-    const [posts, setPosts] = useState({})
+    const [posts, setPosts] = useState([])
     
-    if(!posts.length){
-        console.log('fetching...')
-        fetch(URL_FIREBASE_REALTIME_DATABASE)
-        .then(res => {
-            dataReceived = true
-            return res.json()
-        }).then(data => {
-            console.log('from web:', data)
-            setPosts(data)
-        })
+    React.useEffect(() => {
+        async function getPosts(){
+            if(!posts.length){
+                const res = await fetch(URL_FIREBASE_REALTIME_DATABASE)
+                const data = await res.json()
+                setPosts(data)
+               } 
         }
-     console.log('posts:',  posts.length)
+
+        getPosts()
+       
+    }, [])
+
     const postRefs = posts.map(item => {
         return <Post key={item.id}
                           post={item}
