@@ -45,6 +45,7 @@ const addResourcesToCache = async (resources) => {
                         } else{
                           return fetch(event.request)
                           .then(function(res){
+                           // console.log(res.body.json())
                             return caches.open(DYNAMIC_CACHE)
                             .then(function(cache){
                               cache.put(event.request.url, res.clone())
