@@ -5,18 +5,21 @@ import Post from './Post'
 const URL_FIREBASE_REALTIME_DATABASE = 'https://tinywritingchest-default-rtdb.europe-west1.firebasedatabase.app/data.json'
 
 export default function Content(props){
-
-    const [posts, setPosts] = useState()
+    let dataReceived = false
+    const [posts, setPosts] = useState({})
     
-    if(!posts){
+    if(!posts.length){
+        console.log('fetching...')
         fetch(URL_FIREBASE_REALTIME_DATABASE)
-    .then(res => {
-        return res.json()
-    }).then(data => {
-        setPosts(data)
-    })
-    }
-     console.log('posts:',  posts)
+        .then(res => {
+            dataReceived = true
+            return res.json()
+        }).then(data => {
+            console.log('from web:', data)
+            setPosts(data)
+        })
+        }
+     console.log('posts:',  posts.length)
     const postRefs = posts.map(item => {
         return <Post key={item.id}
                           post={item}
