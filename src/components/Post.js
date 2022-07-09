@@ -1,4 +1,7 @@
 import React from 'react'
+import Button from '@mui/material/Button'
+import theme from '../themes'
+import { ThemeProvider } from '@emotion/react'
 
 export default function Post(props){
     const [isShown, setIsShown] = React.useState(false)
@@ -27,10 +30,16 @@ export default function Post(props){
 
     return(
         <div className='post'>
-            <h3>{props.post.title}</h3>
+             <div>
+             <h3>{props.post.title}</h3>
+                <ThemeProvider theme={theme}>
+                    <Button color='primary' variant="contained" onClick={showPost}>Read</Button>
+                </ThemeProvider>
+            </div>
+            
             <p id='date'>{formattedDate}</p>
             <div id={props.post.id} className='text'>{props.post.text}</div>
-            <button className='btn' type='button' onClick={showPost}> Read</button>
+           
         </div>
     )
 }

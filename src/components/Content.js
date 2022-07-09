@@ -20,7 +20,7 @@ export default function Content(props){
         getPosts()
        
     }, [])
-
+    
     const postRefs = posts.map(item => {
         return <Post key={item.id}
                           post={item}

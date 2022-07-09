@@ -1,5 +1,5 @@
 STATIC_CACHE = 'v4'
-DYNAMIC_CACHE = 'd1'
+DYNAMIC_CACHE = 'd5'
 
 const addResourcesToCache = async (resources) => {
     const cache = await caches.open(STATIC_CACHE);
@@ -45,7 +45,7 @@ const addResourcesToCache = async (resources) => {
                         } else{
                           return fetch(event.request)
                           .then(function(res){
-                           // console.log(res.body.json())
+                                   //console.log(res.json())
                             return caches.open(DYNAMIC_CACHE)
                             .then(function(cache){
                               cache.put(event.request.url, res.clone())
