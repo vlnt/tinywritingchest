@@ -30,15 +30,18 @@ export default function Post(props){
 
     return(
         <div className='post'>
-             <div>
+            <ThemeProvider theme={theme}>
+            <div>
              <h3>{props.post.title}</h3>
-                <ThemeProvider theme={theme}>
+            
                     <Button color='primary' variant="contained" onClick={showPost}>Read</Button>
-                </ThemeProvider>
+    
             </div>
             
             <p id='date'>{formattedDate}</p>
             <div id={props.post.id} className='text'>{props.post.text}</div>
+            </ThemeProvider>
+             
            
         </div>
     )
