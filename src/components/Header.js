@@ -8,7 +8,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../themes'
 import { ThemeProvider } from "@emotion/react";
-import '..utils/firebase'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export default function Header(){
