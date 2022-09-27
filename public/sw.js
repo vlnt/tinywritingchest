@@ -1,5 +1,5 @@
-STATIC_CACHE = 'v9'
-DYNAMIC_CACHE = 'd5'
+STATIC_CACHE = 'v1'
+DYNAMIC_CACHE = 'd1'
 
 const addResourcesToCache = async (resources) => {
     const cache = await caches.open(STATIC_CACHE);
