@@ -19,5 +19,3 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
-
-  export default signInWithPopup
