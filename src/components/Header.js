@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../themes'
 import { ThemeProvider } from "@emotion/react";
+import { signInWithPopup } from "firebase/auth";
 
 export default function Header(){
     return(
@@ -28,7 +29,7 @@ export default function Header(){
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           TinyWritingChest
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={()=>signInWithPopup}>Login</Button>
            </Toolbar>
           </AppBar>
          </Box>
