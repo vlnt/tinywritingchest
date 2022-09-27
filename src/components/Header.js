@@ -13,7 +13,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 export default function Header(){
 
   function googleSignIn(){
-    const provider = new GoogleAuthProvider()
     const auth = getAuth()
     signInWithPopup(auth, provider)
    .then((result) => {
