@@ -29,7 +29,7 @@ export default function Header(){
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           TinyWritingChest
           </Typography>
-          <Button color="inherit" onClick={()=>signInWithPopup}>Login</Button>
+          <Button id= "google_auth" color="inherit" onClick={()=>signInWithPopup()}>Login</Button>
            </Toolbar>
           </AppBar>
          </Box>
