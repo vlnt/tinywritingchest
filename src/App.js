@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter, ReactRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from "./components/Header"
 import Content from './components/Content'
 import Footer from './components/Footer'
@@ -13,7 +13,6 @@ export default function App() {
                 <Switch>
                     <Route exact path="/" component={Content} />
                     <Route exact path="/login" component={Login} />
-
                 </Switch>
                 <Footer />
             </BrowserRouter>
