@@ -52,8 +52,10 @@ export default function Header() {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 TinyWritingChest
               </Typography>
-              
-                <Link to='/login'>Login</Link>
+              <Button>
+              <Link to='/login'>Login</Link>
+              </Button>
+                
               
             </Toolbar>
           </AppBar>
