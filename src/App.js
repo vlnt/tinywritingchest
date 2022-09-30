@@ -5,21 +5,20 @@ import Content from './components/Content'
 import Footer from './components/Footer'
 import Login from './components/user/login'
 
-export default function App(){
-    return(
-          <>
-                <Header />
-                <BrowserRouter>
+export default function App() {
+    return (
+        <>
+            <Header />
+            <BrowserRouter>
                 <Switch>
-                <Route exact path="/" component={Content} />
-                <Route exact path="/login" component={Login} />
+                    <Route exact path="/" component={Content} />
+                    <Route exact path="/login" component={Login} />
 
                 </Switch>
-                    <Content />
-                </BrowserRouter>
-              
-              
-              <Footer />
-          </>
+            </BrowserRouter>
+
+
+            <Footer />
+        </>
     )
 }
