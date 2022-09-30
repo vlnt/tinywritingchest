@@ -8,17 +8,15 @@ import Login from './components/user/login'
 export default function App() {
     return (
         <>
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Switch>
                     <Route exact path="/" component={Content} />
                     <Route exact path="/login" component={Login} />
 
                 </Switch>
+                <Footer />
             </BrowserRouter>
-
-
-            <Footer />
         </>
     )
 }
