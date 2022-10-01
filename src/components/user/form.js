@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 
 class LoginForm extends Component {
 
+    state = {
+        register: true,
+        user: {
+            email:'',
+            password:''
+        }
+    }
+
+    handleForm = (e) => {
+             
+    }
+
     render(){
         return(
             <>
-                the form
+                <form onSubmit={ (e) => this.handleForm(e)}>
+
+                </form>
             </>
         )
     }
