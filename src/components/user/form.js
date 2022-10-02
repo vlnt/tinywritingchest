@@ -13,14 +13,21 @@ class LoginForm extends Component {
     handleForm = (e) => {
         e.preventDefault()
         if(this.state.register){
-                console.log('REGISTER')
+                console.log(this.state)
         } else{
-                console.log('SIGN IN')
+                console.log(this.state)
         }
     }
 
     changeHandler = (e) => {
-
+        let name = e.target.name
+        let value = e.target.value
+        this.setState(prev => ({
+            user:{
+                ... prev.user,
+                [name]: value
+            }
+        }))
     }
 
     render(){
