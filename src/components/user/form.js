@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class LoginForm extends Component {
 
     state = {
-        register: true,
+        register: false,
         user: {
             email:'',
             password:''
@@ -11,7 +11,12 @@ class LoginForm extends Component {
     }
 
     handleForm = (e) => {
-             
+        e.preventDefault()
+        if(this.state.register){
+                console.log('REGISTER')
+        } else{
+                console.log('SIGN IN')
+        }
     }
 
     changeHandler = (e) => {
