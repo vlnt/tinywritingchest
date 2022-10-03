@@ -19,7 +19,7 @@ class LoginForm extends Component {
         const {password} = this.state.user
 
         if(this.state.register){
-                createUserWithEmailAndPassword(auth, email, password)
+                auth.createUserWithEmailAndPassword(email, password)
                 .then(response => {
                     console.log(response)
                 })
