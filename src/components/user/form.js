@@ -6,7 +6,7 @@ import auth from '../../utils/firebase';
 class LoginForm extends Component {
 
     state = {
-        register: false,
+        register: true,
         user: {
             email:'',
             password:''
