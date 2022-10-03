@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../utils/firebase';
 
 
@@ -19,7 +19,7 @@ class LoginForm extends Component {
         const {password} = this.state.user
 
         if(this.state.register){
-                auth.createUserWithEmailAndPassword(email, password)
+                createUserWithEmailAndPassword(auth, email, password)
                 .then(response => {
                     console.log(response)
                 })
