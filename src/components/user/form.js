@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 //import  app from '../../utils/firebase';
 
 const auth = getAuth()
@@ -27,7 +27,13 @@ class LoginForm extends Component {
                     console.log(e)
                 })
         } else{
-                console.log(this.state)
+                signInWithEmailAndPassword(auth, email, password)
+                .then( response => {
+                    console.log(response)
+                })
+                .catch( e => {
+                    console.log(e)
+                })
         }
     }
 
