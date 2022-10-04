@@ -6,7 +6,7 @@ const auth = getAuth()
 class LoginForm extends Component {
 
     state = {
-        register: true,
+        register: false,
         user: {
             email:'',
             password:''
