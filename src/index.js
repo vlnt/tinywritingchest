@@ -12,7 +12,7 @@ const auth = getAuth()
 
 onAuthStateChanged(auth, user => {
     if(user){
-        console.log(user)
+        console.log(user.email, ',\n ', user.uid)
     } else{
        console.log('no user')
     }
