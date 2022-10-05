@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import  { auth } from '../../utils/firebase';
+import * as firebase from '../../utils/firebase';
 
 //const auth = getAuth()
 class LoginForm extends Component {
@@ -19,7 +19,7 @@ class LoginForm extends Component {
         const {password} = this.state.user
 
         if(this.state.register){
-                createUserWithEmailAndPassword(auth, email, password)
+                createUserWithEmailAndPassword(firebase.auth, email, password)
                 .then(response => {
                     console.log(response)
                 })
@@ -27,7 +27,7 @@ class LoginForm extends Component {
                     console.log(e)
                 })
         } else{
-                signInWithEmailAndPassword(auth, email, password)
+                signInWithEmailAndPassword(firebase.auth, email, password)
                 .then( response => {
                     console.log(response)
                 })
@@ -49,7 +49,7 @@ class LoginForm extends Component {
     }
 
     handleLogout = () => {
-        signOut(auth)
+        signOut(firebase.auth)
         .then( () => {
             console.log("user logged out")
         } )
