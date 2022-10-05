@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 //import  app from '../../utils/firebase';
 
 const auth = getAuth()
@@ -48,6 +48,13 @@ class LoginForm extends Component {
         }))
     }
 
+    handleLogout = () => {
+        signOut(auth)
+        .then( () => {
+            console.log("user logged out")
+        } )
+    }
+
     render(){
         return(
             <>
@@ -72,6 +79,10 @@ class LoginForm extends Component {
                        </div>
                        <button type='submit' className='btn btn-primary'>
                         {this.state.register ? 'Register' : 'Sign in'}
+                       </button>
+                       <hr/>
+                       <button onClick={ () => handleLogout() }>
+                         Logout
                        </button>
                 </form>
             </>

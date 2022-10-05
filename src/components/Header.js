@@ -13,63 +13,35 @@ import { ThemeProvider } from "@emotion/react";
 
 export default function Header() {
 
-  // function googleSignIn(){
-  //   const auth = getAuth()
-  //   signInWithPopup(auth, provider)
-  //  .then((result) => {
-  //   // This gives you a Google Access Token. You can use it to access the Google API.
-  //   const credential = GoogleAuthProvider.credentialFromResult(result);
-  //   const token = credential.accessToken;
-  //   // The signed-in user info.
-  //   const user = result.user;
-  //   // ...
-  // }).catch((error) => {
-  //   // Handle Errors here.
-  //   const errorCode = error.code;
-  //   const errorMessage = error.message;
-  //   // The email of the user's account used.
-  //   const email = error.customData.email;
-  //   // The AuthCredential type that was used.
-  //   const credential = GoogleAuthProvider.credentialFromError(error);
-  //   // ...
-  // });
-  //}
   return (
     <header className="header">
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
-               <Link to='/'>
-               <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-              ><MenuIcon /></IconButton>
+              <Link to='/'>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  sx={{ mr: 2 }}
+                ><MenuIcon /></IconButton>
               </Link>
-                
-              
+
+
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 TinyWritingChest
               </Typography>
               <Button>
-              <Link to='/login'>Login</Link>
+                <Link to='/login'>Login</Link>
               </Button>
-                
-              
+
+
             </Toolbar>
           </AppBar>
         </Box>
       </ThemeProvider>
-
-
-      {/* <div className="container">
-            <img src="images/inkpot.png" alt="vlnt"/>
-            <h2 className="header--title">TinyWritingChest</h2> */}
-
-      {/* </div> */}
     </header>
   )
 }
