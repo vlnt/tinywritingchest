@@ -81,7 +81,7 @@ class LoginForm extends Component {
                         {this.state.register ? 'Register' : 'Sign in'}
                        </button>
                        <hr/>
-                       <button onClick={ (e) => handleLogout(e) }>
+                       <button onClick={ () => this.handleLogout() }>
                          Logout
                        </button>
                 </form>
