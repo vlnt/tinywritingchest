@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import auth from '../../utils/firebase';
 
-//const auth = getAuth()
+const auth = getAuth()
 class LoginForm extends Component {
 
     state = {
