@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './utils/firebase'
+import firebase, { auth } from './utils/firebase'
 import App from './App'
 import './style.css'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+//import { getAuth} from "firebase/auth";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />)
 
-const auth = getAuth()
+//const auth = getAuth()
 
-onAuthStateChanged(auth, user => {
+firebase.onAuthStateChanged(auth, user => {
     if(user){
         console.log(user.email, ',\n ', user.uid)
     } else{
