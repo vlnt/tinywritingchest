@@ -83,7 +83,7 @@ class LoginForm extends Component {
                        </button>
                        <hr/>
                 </form>
-                <button onClick={ (e) => this.handleLogout(e) } className='btn btn-primary'>
+                <button onClick={ (e) => this.handleLogout(e) } id="logout" className='btn btn-primary'>
                          Logout
                 </button>
             </>

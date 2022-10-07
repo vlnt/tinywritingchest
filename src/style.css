@@ -121,6 +121,10 @@ form {
     padding: 100px
 }
 
+#logout {
+    padding: 100px
+}
+
 .btn:hover,
 .btn:active{
     background-color: var(--color-green-100);
