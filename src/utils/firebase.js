@@ -2,7 +2,7 @@
 import * as firebase  from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
-import { getAuth } from "firebase/auth";
+import * as auth from "firebase/auth";
 //import 'firebase/firestore';
 
 
@@ -24,8 +24,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
-const auth = getAuth(app);
+getAuth(app);
 const database = getDatabase(app);
 const analytics = getAnalytics(app);
 
-export default { firebase }
+export default { firebase, auth }
