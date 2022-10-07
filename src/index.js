@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import firebase, { auth } from './utils/firebase'
+import firebase from './utils/firebase'
 import App from './App'
 import './style.css'
 //import { getAuth} from "firebase/auth";
