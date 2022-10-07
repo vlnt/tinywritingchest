@@ -49,6 +49,7 @@ class LoginForm extends Component {
     }
 
     handleLogout = () => {
+        preventDefault()
         signOut(auth)
         .then( () => {
             console.log("user logged out")
