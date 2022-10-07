@@ -48,8 +48,8 @@ class LoginForm extends Component {
         }))
     }
 
-    handleLogout = () => {
-        preventDefault()
+    handleLogout = (e) => {
+        e.preventDefault()
         signOut(auth)
         .then( () => {
             console.log("user logged out")
@@ -83,7 +83,7 @@ class LoginForm extends Component {
                        </button>
                        <hr/>
                 </form>
-                <button onClick={ () => this.handleLogout() } className='btn btn-primary'>
+                <button onClick={ (e) => this.handleLogout(e) } className='btn btn-primary'>
                          Logout
                 </button>
             </>
