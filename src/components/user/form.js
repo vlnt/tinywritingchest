@@ -6,7 +6,7 @@ const auth = getAuth()
 class LoginForm extends Component {
 
     state = {
-        register: false,
+        register: true,
         user: {
             email:'',
             password:''
@@ -21,6 +21,8 @@ class LoginForm extends Component {
         if(this.state.register){
                 createUserWithEmailAndPassword(auth, email, password)
                 .then(response => {
+                    this.state.register = false
+                    console.log(this.state.register)
                     console.log(response)
                 })
                 .catch(e => { 

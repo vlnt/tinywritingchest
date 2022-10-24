@@ -14,6 +14,7 @@ const user = auth.currentUser
 onAuthStateChanged(auth, user => {
     if(user){
         console.log(user.email, ',\n ', user.uid)
+        
     } else{
        console.log('no user')
     }
