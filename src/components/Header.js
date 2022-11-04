@@ -17,8 +17,8 @@ import { useState } from 'react'
 export default function Header() {
 
   const auth = getAuth()
-  console.log("HEADER:", auth.currentUser.email)
-  //const {user, setUser} = useState(auth.currentUser)
+  const [user, setUser] = useState(auth.currentUser)
+  console.log("USER:", user)
 
 
   return (
@@ -42,7 +42,7 @@ export default function Header() {
                 TinyWritingChest
               </Typography>
               <Button>
-                <Link to='/login'>{auth.currentUser.email ? "Logout" : "Login"}</Link>
+                <Link to='/login'>{user ? "Logout" : "Login"}</Link>
               </Button>
 
 
