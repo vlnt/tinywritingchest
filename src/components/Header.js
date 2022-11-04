@@ -9,19 +9,16 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../themes'
 import { ThemeProvider } from "@emotion/react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+//import "../utils/firebase"
+import { getAuth } from "firebase/auth";
 import { useState } from 'react'
 
-const auth = getAuth()
 
 export default function Header() {
-  const {user, setUser} = useState((user) => {
-    if (auth.currentUser) {
-        user = true
-    } else {
-      user = false
-    }
-}) 
+
+  const auth = getAuth()
+  console.log("HEADER:", auth.currentUser.email)
+  //const {user, setUser} = useState(auth.currentUser)
 
 
   return (
@@ -45,7 +42,7 @@ export default function Header() {
                 TinyWritingChest
               </Typography>
               <Button>
-                <Link to='/login'>{ auth.currentUser ? "Logout" : "Login" }</Link>
+                <Link to='/login'>{auth.currentUser.email ? "Logout" : "Login"}</Link>
               </Button>
 
 
