@@ -9,18 +9,22 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../themes'
 import { ThemeProvider } from "@emotion/react";
-//import "../utils/firebase"
-import { getAuth } from "firebase/auth";
-import { useState } from 'react'
 
 
-export default function Header() {
+export default function Header(props) {
 
-  const auth = getAuth()
-  const [user, setUser] = useState(auth.currentUser)
-  console.log("USER:", user)
-
-
+ // const auth = getAuth()
+//   onAuthStateChanged(auth, user => {
+//     if(user){
+//         console.log(user.email, ',\n ', user.uid)
+        
+//     } else{
+//        console.log('no user')
+//     }
+// })
+  //const [user, setUser] = useState(auth.currentUser)
+  //const user = auth
+  console.log("props:", props) 
   return (
     <header className="header">
       <ThemeProvider theme={theme}>
@@ -42,7 +46,7 @@ export default function Header() {
                 TinyWritingChest
               </Typography>
               <Button>
-                <Link to='/login'>{user ? "Logout" : "Login"}</Link>
+                <Link to='/login'>{(props.user == "no user") ? "Login" : props.user}</Link>
               </Button>
 
 
