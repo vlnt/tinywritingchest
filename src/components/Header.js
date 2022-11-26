@@ -25,6 +25,7 @@ export default function Header(props) {
   //const [user, setUser] = useState(auth.currentUser)
   //const user = auth
   console.log("props:", props) 
+  
   return (
     <header className="header">
       <ThemeProvider theme={theme}>

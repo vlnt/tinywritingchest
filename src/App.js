@@ -8,28 +8,31 @@ import Login from './components/user/login'
 
 export default function App(props) {
      const auth = getAuth()
-     const user = auth.currentUser
-    let loggedUser = onAuthStateChanged(auth, user => {
-            if(user){
-                console.log("App:", user.email, ',\n ', user.uid)
-                return user
+     const authUser = auth.currentUser
+    // onAuthStateChanged(auth, user => {
+    //         if(user){
+    //             console.log("App:", user.email, ',\n ', user.uid)
+    //             return user.uid
                 
-            } else{
-               console.log('no user')
-            }
-        })
-   // const [user, setUser] = useState({user:auth.currentUser})
-  // let loggedUser
-    if (user != null){
-        loggedUser = user.email
-    }
-    else {
-        loggedUser = "no user"
-    }
+    //         } else{
+    //            console.log('no user')
+    //            return "no user"
+    //         }
+    //     })
+   const [user, setUser] = useState(authUser)
+//    let loggedUser
+   
+//     if (authUser != null ){
+//         loggedUser = authUser
+//     }
+    // else {
+    //     loggedUser = "no user"
+    // }
+    //console.log(loggedUser)
     return (
         <>
             <BrowserRouter>
-                <Header user = {loggedUser} />
+                <Header user = {user} />
                 <Routes>
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/" element={<Content />} />
