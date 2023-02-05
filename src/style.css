@@ -87,7 +87,14 @@ main{
     margin-top: 100px;
 }
 
+.container{
+    margin-top: 50px;
+}
 
+.container label{
+    color:rgb(3, 164, 164);
+    font-style: italic;
+}
 
 .blog-items{
     width: 70%;
