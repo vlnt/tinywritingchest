@@ -1,7 +1,6 @@
 import React from 'react'
-import Button from '@mui/material/Button'
-import theme from '../themes'
-import { ThemeProvider } from '@emotion/react'
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 
 export default function Post(props){
     const [isShown, setIsShown] = React.useState(false)
@@ -30,17 +29,15 @@ export default function Post(props){
 
     return(
         <div className='post'>
-            <ThemeProvider theme={theme}>
             <div>
              <h3>{props.post.title}</h3>
             
-                    <Button color='primary' variant="contained" onClick={showPost}>Read</Button>
+                    <Button basic onClick={showPost}>Read</Button>
     
             </div>
             
             <p id='date'>{formattedDate}</p>
             <div id={props.post.id} className='text'>{props.post.text}</div>
-            </ThemeProvider>
              
            
         </div>

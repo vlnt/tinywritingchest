@@ -7,17 +7,21 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />)
 
 const auth = getAuth()
-const user = auth.currentUser
+let authUser = auth.currentUser
 
 
 onAuthStateChanged(auth, user => {
     if(user){
+        authUser = user.email
         console.log(user.email, ',\n ', user.uid)
+        root.render(<App user={authUser}/>)
         
     } else{
        console.log('no user')
     }
 })
+console.log(authUser)
+
+

@@ -1,4 +1,4 @@
-STATIC_CACHE = 'v4'
+STATIC_CACHE = 's4'
 DYNAMIC_CACHE = 'd4'
 
 const addResourcesToCache = async (resources) => {

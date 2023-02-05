@@ -33,7 +33,7 @@ html{
 
 
 body {
-    background-color: var(--color-green-500);
+    /* background-color: var(--color-green-500); */
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     
@@ -107,7 +107,7 @@ a {
 .text{
     display: none;
 }
-.btn{
+/* .btn{
     cursor: pointer;
     font: inherit;
     padding: var(--space-2) var(--space-6);
@@ -115,7 +115,7 @@ a {
     color: var(--color-primary-500-contrast);
     border: 1px solid var(--color-primary-500);
     border-radius: var(--border-radius-small);
-}
+} */
 
 form {
     padding: 100px
