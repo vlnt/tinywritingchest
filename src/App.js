@@ -28,7 +28,6 @@ export default function App(props) {
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/" element={<Content />} />
                 </Routes>
-                <Footer />
             </BrowserRouter>
         </>
     )
