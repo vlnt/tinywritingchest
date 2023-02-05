@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Header from "./components/Header"
 import Content from './components/Content'
-import Footer from './components/Footer'
+import PostItem from './components/PostItem'
 import Login from './components/user/login'
 
 export default function App(props) {
@@ -25,6 +25,7 @@ export default function App(props) {
             <BrowserRouter>
                 <Header user={props.user} />
                 <Routes>
+                    <Route path="/posts/:postId" element={<PostItem />} />
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/" element={<Content />} />
                 </Routes>
