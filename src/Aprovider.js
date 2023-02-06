@@ -1,25 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import App from './App'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./utils/firebase";
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Aprovider = () => {
-    const auth = getAuth()
     let authUser
-    
-    
-    onAuthStateChanged(auth, user => {
-        if(user){
-            authUser = user.email
-            console.log(user.email, ',\n ', user.uid)
-            return authUser
-            
-        } else{
-           console.log('no user')
-        }
+    useEffect(() => {
+        authUser = onAuthStateChanged(auth, user => {
+            if(user){
+                console.log(user.email + ' ' + user.uid)
+                return user
+            } else{
+               user = null
+               console.log(user)
+            }
+        }, [])
     })
-
+   
+    
     return (
-        <App user={authUser} />
+        <App user={auth.currentUser} />
     )
 }
 

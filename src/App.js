@@ -1,28 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { auth } from './utils/firebase'
+import { onAuthStateChanged } from "firebase/auth";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import PostItem from "./components/PostItem";
 import Login from "./components/user/login";
 
-export default function App(props) {
+export default function App() {
   const [user, setUser] = useState();
-  console.log("user in app: ", user);
-
-//   useEffect(() => {
-//     const auth = getAuth();
-//     const authUser = auth.currentUser;
-//   }, []);
-
-// setUser(() => {
-//     return Auth()
-// })
-
+  //console.log("user in app: ", auth.currentUser);
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          setUser(uid)
+          console.log("uid", uid)
+        } else {
+          // User is signed out
+          // ...
+          console.log("user is logged out")
+        }
+      });
+     
+  }, [])
+  console.log(user)
   return (
     <>
         <BrowserRouter>
-          <Header user={props.user} />
+          <Header user={user} />
           <Routes>
             <Route path="/posts/:postId" element={<PostItem />} />
             <Route exact path="/login" element={<Login />} />

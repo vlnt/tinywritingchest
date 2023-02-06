@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Item } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default function Post(props) {
   const [isShown, setIsShown] = React.useState(false);
-
+  
   const formattedDate = new Date(props.post.date).toLocaleDateString("en-US", {
     weekday: "short",
     day: "numeric",
