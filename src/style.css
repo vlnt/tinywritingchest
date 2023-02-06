@@ -9,7 +9,7 @@ html{
     --color-green-400:  rgb(216, 249, 220);
     
     --color-green-100: rgb(3, 164, 164);
-    --color-green-500: rgb(232, 249, 243);
+    --color-green-500: #fefefe;
     
   
     --color-primary-500-contrast: white;
@@ -33,7 +33,7 @@ html{
 
 
 body {
-    /* background-color: var(--color-green-500); */
+    background-color: var(--color-green-500);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     
@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    color: var(--color-green-100);
+    color: var(--color-green-400);
     margin-bottom: var(--space-1);
 }
 
@@ -56,8 +56,7 @@ a {
 .container{
     display: flex;
     align-items: center;
-    width:70%;
-    border-bottom: double 2px;
+    width:80%;
 }
 
 .header img{
@@ -92,12 +91,12 @@ main{
 }
 
 .container label{
-    color:rgb(3, 164, 164);
+    color: #aba;
     font-style: italic;
 }
 
 .blog-items{
-    width: 70%;
+    width: 80%;
     align-items:center;
     
 }
@@ -121,7 +120,8 @@ main{
     cursor: pointer;
     font: inherit;
     padding: var(--space-2) var(--space-6);
-    background-color: var(--color-blue-100);
+    background-color: #729da1;
+
     color: var(--color-primary-500-contrast);
     border: 1px solid var(--color-primary-500);
     border-radius: var(--border-radius-small);

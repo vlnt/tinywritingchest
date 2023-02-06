@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Image } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -47,11 +47,11 @@ export default function Header(props) {
                 ><MenuIcon /></IconButton>
               </Link>
 
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Typography variant="h4" color='#a0cca0' component="div" sx={{ flexGrow: 1 }}>
                 TinyWritingChest
               </Typography>
               <Button>
-                <Link to='/login'>{props.user === null ? 'Login' : props.user}</Link>
+                <Link to='/login'>{props.user === null ? 'Login' :  <Icon size='big' color="green" name='user outline' />}</Link>
               </Button>
 
             </Toolbar>

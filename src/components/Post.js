@@ -32,10 +32,11 @@ export default function Post(props) {
   return (
     
     <Card
+    color="teal"
     fluid
       header={props.post.title}
       description={formattedDate}
-      meta={<Link to={postLink}>Read</Link>}
+      extra={<Link to={postLink}>Read</Link>}
     />
   );
   // return(
