@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-//import auth from '../../utils/firebase';
+
 
 const auth = getAuth()
 class LoginForm extends Component {
 
+
     state = {
         register: false,
+        redirect: true,
         user: {
             email:'',
             password:''
         }
     }
+    
+    componentDidMount() {
+        console.log(this.state.redirect)
+      }
 
     handleForm = (e) => {
         e.preventDefault()
@@ -32,6 +38,9 @@ class LoginForm extends Component {
                 signInWithEmailAndPassword(auth, email, password)
                 .then( response => {
                     console.log(response)
+                    this.setState({redirect: true})
+                    window.location.assign('/')
+                    //document.location.reload()
                 })
                 .catch( e => {
                     console.log(e)
@@ -55,6 +64,7 @@ class LoginForm extends Component {
         signOut(auth)
         .then( () => {
             console.log("user logged out")
+            window.location.assign('/')
         } )
     }
 
