@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../utils/firebase";
-//import { Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -46,13 +46,12 @@ export default function Header(props) {
                 TinyWritingChest
               </Typography>
               
-                <Link to="/login">{user ? 'Logout' : 'Login'}
-                {/* <Icon
-                  as="button"
+                <Link to="/login">{!user ? 'Login' : 
+                (<Icon
                   size="big"
                   color="green"
                   name="user outline"
-                />} */}
+                />)}
                 </Link>
             </Toolbar>
           </AppBar>
