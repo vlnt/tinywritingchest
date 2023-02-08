@@ -48,6 +48,16 @@ body {
     margin-bottom: var(--space-1);
 }
 
+.link{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+textarea{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 a {
     color: var(--color-green-400);
     text-decoration: none
@@ -105,6 +115,15 @@ main{
     justify-content: center;
     color:rgb(72, 84, 84);
     flex:50%
+}
+
+.new-post{
+    width: 70%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
 }
 
 #date{

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Content from "./components/Content";
 import PostItem from "./components/PostItem";
 import Login from "./components/user/login";
+import NewPost from "./components/NewPost";
 
 export default function App() {
   const [user, setUser] = useState();
@@ -33,6 +34,7 @@ export default function App() {
         <BrowserRouter>
           <Header user={user} />
           <Routes>
+            <Route path="/create" element={<NewPost uid={user} />} />
             <Route path="/posts/:postId" element={<PostItem />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/" element={<Content />} />

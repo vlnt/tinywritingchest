@@ -45,13 +45,15 @@ export default function Header(props) {
               >
                 TinyWritingChest
               </Typography>
-              
-                <Link to="/login">{!user ? 'Login' : 
-                (<Icon
+              <Link to='/create'> <div className="link">Create</div> </Link>
+                <Link to="/login"><div className="link">{!user ? 'Login' : 
+                (
+                  <Icon
                   size="big"
                   color="green"
                   name="user outline"
-                />)}
+                />
+                  )}</div>
                 </Link>
             </Toolbar>
           </AppBar>
