@@ -15,7 +15,7 @@ const PostItem = (props) => {
                 const res = await fetch(`${URL_FIREBASE_REALTIME_DATABASE}`)
                 const data = await res.json()
 
-                setPosts(data)
+                setPosts(Array.from(Object.values(data)))
                } 
         }
         getPosts()

@@ -35,19 +35,14 @@ const NewPost = (props) => {
     const onTitleChange = (e) => {
         e.preventDefault()
         setTitle(e.target.value)
-        console.log(title)
+        //console.log(title)
     }
 
     const onBodyChange = (e) => {
         e.preventDefault()
         setBody(e.target.value)
-        console.log(body)
+        //console.log(body)
     }
-
-
-    // function save(title, body){
-    //     writeNewPost(title, body)
-    // }
 
     return(
         <main>
