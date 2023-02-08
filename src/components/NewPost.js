@@ -28,7 +28,8 @@ const NewPost = (props) => {
         const updates = {};
         updates['/data/' + newPostKey] = postData;
         //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-      
+        document.querySelector('input').value = ''
+        document.querySelector('.content').value = ''
         return update(ref(db), updates);
       }
 
@@ -49,7 +50,7 @@ const NewPost = (props) => {
             <div className='new-post'>
                 <h3>Create post</h3>
                 <Input onChange={onTitleChange} fluid label='Title'/>
-                <TextArea onChange={onBodyChange} placeholder='Start typing here ...' rows={30} />
+                <TextArea className='content' onChange={onBodyChange} placeholder='Start typing here ...' rows={30} />
                 <a>
                 <Button onClick={writeNewPost} floated="left" content="Create" icon="add circle" primary={true}/>
                 </a>
