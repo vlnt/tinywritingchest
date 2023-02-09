@@ -19,7 +19,7 @@ export default function App() {
           // https://firebase.google.com/docs/reference/js/firebase.User
           const uid = user.uid;
           setUser(uid)
-          console.log("uid", uid)
+          //console.log("uid", uid)
         } else {
           // User is signed out
           // ...
@@ -28,7 +28,7 @@ export default function App() {
       });
      
   }, [])
-  console.log(user)
+  //console.log(user)
   return (
     <>
         <BrowserRouter>

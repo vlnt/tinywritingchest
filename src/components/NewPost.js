@@ -6,7 +6,7 @@ import { ref, child, push, update } from "firebase/database";
 const NewPost = (props) => {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-    console.log(props.uid)
+    //console.log(props.uid)
 
     function writeNewPost() {
 
@@ -30,7 +30,12 @@ const NewPost = (props) => {
         //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
         document.querySelector('input').value = ''
         document.querySelector('.content').value = ''
-        return update(ref(db), updates);
+        return update(ref(db), updates)
+                    .then(() => {
+                        console.log('saved!')
+                    }) .catch((err) => {
+                        console.error('[Error occured] ', err.message)
+                    })
       }
 
     const onTitleChange = (e) => {

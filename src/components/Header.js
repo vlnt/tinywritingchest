@@ -18,14 +18,14 @@ export default function Header(props) {
   useEffect(() => {
     setUser(props.user);
   }, user);
-  console.log("header: ", user);
+  //console.log("header: ", user);
   return (
     <header className="header">
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
-              <Link to="/">
+              
                 <IconButton
                   size="large"
                   edge="start"
@@ -33,9 +33,11 @@ export default function Header(props) {
                   aria-label="menu"
                   sx={{ mr: 2 }}
                 >
+                  <Link to="/">
                   <MenuIcon />
+                  </Link>
                 </IconButton>
-              </Link>
+              
 
               <Typography
                 variant="h4"
@@ -50,7 +52,7 @@ export default function Header(props) {
                 (
                   <Icon
                   size="big"
-                  color="green"
+                  color="teal"
                   name="user outline"
                 />
                   )}</div>
